@@ -1,5 +1,5 @@
-from function import abrir_caminho, excluir_pasta_appdata, abrir_anydesk
+from function import Espera, Ação
 
-abrir_caminho()
-excluir_pasta_appdata() 
-abrir_anydesk()
+Ação.abrir_caminho()
+Ação.excluir_pasta_appdata() 
+Ação.abrir_anydesk()

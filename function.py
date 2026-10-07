@@ -4,43 +4,51 @@ import shutil
 from pathlib import Path
 
 
-def abrir_caminho(): # Abrir win + r
-    
-    sleep(2.3)
-    pyautogui.hotkey('win', 'r')
-    sleep(0.5)
-    pyautogui.write('%appdata%', interval=0.03)
-    pyautogui.press('enter')
-    
 
-def excluir_pasta_appdata(): # excluir a pasta appdata
+class Espera:
+    def esperar_1_segundo():
+        sleep(1)
+        
+    def esperar_2_segundos():
+            sleep(2)
+        
     
-    sleep(1)
-    pyautogui.hotkey("ctrl", "e")  
-    sleep(0.5)
-    pyautogui.write("anydesk", interval=0.03)
-    sleep(1)
-    pyautogui.press("enter")
-    sleep(1)
-    pyautogui.press("down")
-    sleep(1)
-    pyautogui.press("up")  
-    sleep(1)
-    pyautogui.hotkey('shift', 'delete') 
-    sleep(2.0)
-    pyautogui.press("enter")
-    sleep(1.0)
-    pyautogui.hotkey('alt', 'f4')
-    sleep(1.0)
-    
+class Ação:
+    def abrir_caminho(): # Abrir win + r
+        pyautogui.hotkey('win', 'r')
+        Espera.esperar_1_segundo()
+        pyautogui.write('%appdata%', interval=0.03)
+        Espera.esperar_1_segundo()
+        pyautogui.press('enter')
+        
 
-def abrir_anydesk(): # Abrir anydesk novamente
-    pyautogui.press("win")
-    sleep(1)
-    pyautogui.write("anydesk", interval=0.03)
-    sleep(1.5)
-    pyautogui.press("enter")  
-    sleep(1)
+    def excluir_pasta_appdata(): # excluir a pasta appdata
+        Espera.esperar_2_segundos()
+        pyautogui.hotkey("ctrl", "e")  
+        Espera.esperar_1_segundo()
+        pyautogui.write("anydesk", interval=0.03)
+        Espera.esperar_2_segundos()
+        pyautogui.press("enter")
+        Espera.esperar_2_segundos()
+        pyautogui.press("down")
+        Espera.esperar_2_segundos() 
+        pyautogui.press("up")  
+        Espera.esperar_2_segundos()
+        pyautogui.hotkey('shift', 'delete') 
+        Espera.esperar_2_segundos()
+        pyautogui.press("enter")
+        Espera.esperar_1_segundo()
+        pyautogui.hotkey('alt', 'f4')
+        Espera.esperar_1_segundo()
+        
+
+    def abrir_anydesk(): # Abrir anydesk novamente
+        pyautogui.press("win")
+        Espera.esperar_1_segundo()
+        pyautogui.write("anydesk", interval=0.03)
+        Espera.esperar_2_segundos()
+        pyautogui.press("enter")  
+        Espera.esperar_1_segundo()
 
 
 
